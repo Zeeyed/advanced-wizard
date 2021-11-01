@@ -3,13 +3,13 @@ import { WizardContext } from "../../context";
 
 export const ButtonPrevious = () => {
 
-    const { currentIndexPage, goPreviousClick } = useContext(WizardContext);
+    const { currentIndexPage, goPreviousPage } = useContext(WizardContext);
 
     return (
         currentIndexPage > 0
         ? <button
             type="button"
-            onClick={goPreviousClick}>
+            onClick={goPreviousPage}>
                 Previous
             </button>
         : null

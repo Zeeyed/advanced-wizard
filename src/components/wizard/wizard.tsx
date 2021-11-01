@@ -2,7 +2,7 @@ import { Children, ReactNode, useState } from "react";
 import { WizardContext } from "../../context";
 import { ButtonNext } from "../buttons/buttons-next";
 import { ButtonPrevious } from "../buttons/buttons-previous";
-import { Pages } from "../Pages/pages";
+import { Pages } from "../pages/pages";
 
 type Props = {
     children: ReactNode
@@ -13,19 +13,19 @@ const Wizard = ({ children }: Props) => {
 
     const pages = Children.toArray(children);
 
-    const goPreviousClick = () => {
+    const goPreviousPage = () => {
         setCurrentIndexPage(currentIndexPage - 1);
     };
 
-    const goNextClick = () => {
+    const goNextPage = () => {
         setCurrentIndexPage(currentIndexPage + 1);
     }
     
     const context = {
         currentIndexPage,
-        goNextClick,
-        goPreviousClick,
-        pages
+        goNextPage,
+        goPreviousPage,
+        steps: pages.length
     }
 
     return (

@@ -1,17 +1,17 @@
-import { createContext, ReactNode } from "react";
+import { createContext } from "react";
 
 interface DefaultContext {
     currentIndexPage: number;
-    goNextClick: () => void;
-    goPreviousClick: () => void;
-    pages: ReactNode[];
+    goNextPage: () => void;
+    goPreviousPage: () => void;
+    steps: number;
 };
 
 const defaultContext: DefaultContext = {
     currentIndexPage: 0,
-    goNextClick: () => {},
-    goPreviousClick: () => {},
-    pages: []
+    goNextPage: () => {},
+    goPreviousPage: () => {},
+    steps: 0
 };
 
 export const WizardContext = createContext(defaultContext);
